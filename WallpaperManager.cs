@@ -29,11 +29,6 @@ namespace MyWallpapersDownloader
         public string wallpaper;
         public string wallpaperFile;
 
-        private static JToken[] SearchKey(JArray jarray, string key, bool ignoreCase)
-        {
-            return jarray.Where(x => x is JObject ? ((JObject)x).ContainsKey(key) : false).ToArray();
-        }
-
         public void LoadWallpaperIndex(dynamic jw, string path="")
         {
             if (jw is JObject && jw["wallpapers"] != null)
